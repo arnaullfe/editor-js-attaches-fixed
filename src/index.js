@@ -229,7 +229,7 @@ export default class AttachesTool {
 
       if (titleElement) {
         Object.assign(this.data, {
-          title: titleElement.innerHTML,
+          title: `${titleElement.innerHTML}`,
         });
       }
     }
@@ -314,7 +314,7 @@ export default class AttachesTool {
       if (body.success && body.file !== undefined && !isEmpty(body.file)) {
         this.data = {
           file: body.file,
-          title: body.file.title || '',
+          title: body.file.title ? `${body.file.title}`:'',
         };
 
         this.nodes.button.remove();
@@ -479,7 +479,7 @@ export default class AttachesTool {
   set data({ file, title }) {
     this._data = {
       file,
-      title,
+      `${title}`,
     };
   }
 }
